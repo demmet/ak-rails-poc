@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Full name:</strong>
+  <%= @person.full_name %>
+</p>
+
+<p>
+  <strong>Mother name:</strong>
+  <%= @person.mother_name %>
+</p>
+
+<p>
+  <strong>Father name:</strong>
+  <%= @person.father_name %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @person.date_of_birth %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @person.cpf %>
+</p>
+
+<p>
+  <strong>Address cep:</strong>
+  <%= @person.address_cep %>
+</p>
+
+<p>
+  <strong>Address street:</strong>
+  <%= @person.address_street %>
+</p>
+
+<p>
+  <strong>Address number:</strong>
+  <%= @person.address_number %>
+</p>
+
+<p>
+  <strong>Address complement:</strong>
+  <%= @person.address_complement %>
+</p>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>

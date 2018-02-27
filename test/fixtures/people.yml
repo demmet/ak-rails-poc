@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  full_name: MyString
+  mother_name: MyString
+  father_name: MyString
+  date_of_birth: 2018-02-27
+  cpf: MyString
+  address_cep: MyString
+  address_street: MyString
+  address_number: 1
+  address_complement: MyString
+
+two:
+  full_name: MyString
+  mother_name: MyString
+  father_name: MyString
+  date_of_birth: 2018-02-27
+  cpf: MyString
+  address_cep: MyString
+  address_street: MyString
+  address_number: 1
+  address_complement: MyString
