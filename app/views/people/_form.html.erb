@@ -1,0 +1,62 @@
+<%= form_with(model: person, local: true) do |form| %>
+  <% if person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+      <% person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :full_name %>
+    <%= form.text_field :full_name, id: :person_full_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mother_name %>
+    <%= form.text_field :mother_name, id: :person_mother_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :father_name %>
+    <%= form.text_field :father_name, id: :person_father_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_of_birth %>
+    <%= form.date_select :date_of_birth, id: :person_date_of_birth %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cpf %>
+    <%= form.text_field :cpf, id: :person_cpf %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_cep %>
+    <%= form.text_field :address_cep, id: :person_address_cep %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_street %>
+    <%= form.text_field :address_street, id: :person_address_street %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_number %>
+    <%= form.number_field :address_number, id: :person_address_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_complement %>
+    <%= form.text_field :address_complement, id: :person_address_complement %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
