@@ -37,3 +37,5 @@ gem 'jbuilder', '~> 2.5'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bcrypt'
+gem 'webpacker'
+gem 'react-rails'
