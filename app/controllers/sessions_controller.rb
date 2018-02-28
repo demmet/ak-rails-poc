@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       redirect_to people_url
     else
       flash.now[:danger] = 'Invalid email/password combination'
-      render 'new'
+      render 'home'
     end
   end
 
@@ -19,4 +19,17 @@ class SessionsController < ApplicationController
     log_out
     redirect_to root_url
   end
+
+  def home
+    # Home page
+  end
+
+  def configurations
+    # Config page
+  end
+
+  def save_configurations
+    # Save config post
+  end
+
 end
