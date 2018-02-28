@@ -15,5 +15,7 @@
 #             encrypted_password: encrypted_password,
 #             salt: salt)
 
-@user = User.create(username: "user", email: "mail@example.com",
+User.create(username: "user", email: "mail@example.com",
                      password: "user1234", password_confirmation: "user1234")
+User.create(username: "teste", email: "t@t.com",
+                     password: "teste1", password_confirmation: "teste1")

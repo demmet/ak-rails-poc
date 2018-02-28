@@ -1,0 +1,2 @@
+class FaceBiometry < ApplicationRecord
+end

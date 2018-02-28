@@ -1,0 +1,2 @@
+class FingerprintBiometry < ApplicationRecord
+end
