@@ -1,13 +1,21 @@
-<%= react_component("HelloWorld", { greeting: "Hello" }) %>
 
 <% @page_title = "UserAuth | Login" -%>
-<div class= "Sign_Form">
+<div class= "login_form">
   <h1>Log in</h1>
-  <%= form_tag(:action => 'login_attempt') do %>
-    <p>Username or Email:</br> <%= text_field_tag(:username_or_email) %></p> 
-    <p>Password:</br> <%= password_field_tag :login_password %></p> 
-    <%= submit_tag("Log In") %>
-  <% end %>
-</div>
 
-<%= react_component 'Todo', { task: 'A working coffee component' } %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(:session, url: login_path) do |f| %>
+
+        <%= f.label :username_or_email %>
+        <%= f.email_field :username_or_email, class: 'form-control' %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control' %>
+
+        <%= f.submit "Log in", class: "btn btn-primary" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
