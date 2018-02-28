@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :save_login_state, :only => [:login, :create]
-
+  
   def new
     # Login form
   end
@@ -9,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       log_in user
-      redirect_to people
+      redirect_to people_url
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :people
 
-  root :to => 'sessions#login'
+  root :to => 'sessions#new'
   
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
