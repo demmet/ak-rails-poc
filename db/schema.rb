@@ -10,7 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227193757) do
+ActiveRecord::Schema.define(version: 20180228162633) do
+
+  create_table "biometries", force: :cascade do |t|
+    t.integer "person_id"
+    t.integer "biometry_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["person_id"], name: "index_biometries_on_person_id"
+  end
+
+  create_table "face_biometries", force: :cascade do |t|
+    t.integer "biometry_id"
+    t.string "filename"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["biometry_id"], name: "index_face_biometries_on_biometry_id"
+  end
+
+  create_table "fingerprint_biometries", force: :cascade do |t|
+    t.integer "biometry_id"
+    t.integer "finger_index"
+    t.string "filename"
+    t.string "template"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["biometry_id"], name: "index_fingerprint_biometries_on_biometry_id"
+  end
 
   create_table "people", force: :cascade do |t|
     t.string "full_name"
@@ -24,6 +50,14 @@ ActiveRecord::Schema.define(version: 20180227193757) do
     t.string "address_complement"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "signature_biometries", force: :cascade do |t|
+    t.integer "biometry_id"
+    t.string "filename"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["biometry_id"], name: "index_signature_biometries_on_biometry_id"
   end
 
   create_table "users", force: :cascade do |t|

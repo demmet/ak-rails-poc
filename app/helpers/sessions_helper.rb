@@ -19,4 +19,8 @@ module SessionsHelper
     @current_user = nil
   end
 
+  def update_config
+    # Update config function
+  end
+
 end
