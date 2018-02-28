@@ -6,6 +6,17 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <% if logged_in? %>
+      <% # link_to "Configurations", configurations_path %>
+      <%= link_to "Log out", logout_path, method: :delete %>
+    <% else %>
+      <% current_uri = request.env['PATH_INFO'] %>
+      <% if current_uri != '/login' %>
+        <script type="text/javascript">
+          window.location.href="/login" 
+        </script>
+      <% end %>
+    <% end %>
   </head>
 
   <body>
